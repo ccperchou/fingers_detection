@@ -10,7 +10,7 @@ import operator
 import cv2 as cv
 from statistics import mean
 from collections import OrderedDict
-
+import pyttsx3
 # version 
 print( cv.__version__)
 
@@ -154,6 +154,9 @@ while True:
         
          cv.putText(frame, 'Gate Open', (0, 350), cv.FONT_HERSHEY_SIMPLEX,1, (0, 255, 0) , 2, cv.LINE_AA)
          t_gateopen =t_gateopen+1
+         engine = pyttsx3.init();
+         engine.say("Clément, La porte est dévérouillée ");
+         engine.runAndWait();
          
     if t_gateopen:
          t_gateopen=0
